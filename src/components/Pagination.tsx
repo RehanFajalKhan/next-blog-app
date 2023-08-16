@@ -59,7 +59,7 @@ const Pagination = ({ page, pageCount}: IProptype) => {
     // router.push(pathname + '?' + createQueryString('page', `${page+direction}`))
   };
   return (
-    <div className="flex justify-center mt-12">
+    <div className="flex justify-center mt-3">
       <button
         onClick={() => handlePaginate(-1)}
         className={`${"bg-primary py-2 px-4 text-white w-24 rounded"} ${

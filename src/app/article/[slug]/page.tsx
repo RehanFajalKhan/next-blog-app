@@ -1,6 +1,5 @@
 import Author from "@/components/Author";
 import { fetchArticlesBySlug } from "@/http";
-import { formatDate } from "@/utils";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
@@ -48,7 +47,7 @@ const slug = async ({
   return (
     <>
       <div className="my-12 grid lg:grid-cols-3 gap-12 single-article">
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
           <h1 className="text-2xl font-bold py-2">
             {articles.attributes.Title}
           </h1>
@@ -61,7 +60,6 @@ const slug = async ({
                 fill
               />
             </div>
-
             <MDXRemote source={articles.attributes.body} />
           </div>
         </div>
@@ -82,7 +80,7 @@ const slug = async ({
             Subscribe
           </button>
           <hr className="my-6 border-gray-100" />
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <span className="inline-flex sm:mt-0 mt-4 sm:justify-start">
             <span className="text-gray-500 mr-2">Share</span>
             <a className="text-gray-500">
               <svg

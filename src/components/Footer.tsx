@@ -5,27 +5,27 @@ import logo from '../../public/logo.png'
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 mt-6 fixed bottom-0 left-0 bg-white w-full">
-      <div className="container mx-auto flex items-center flex-col sm:flex-row py-4">
+    <footer className="text-gray-600 fixed mt-6 bottom-0 left-0 bg-white w-full h-auto">
+      <div className="container mx-auto flex flex-col items-center sm:flex-row sm:justify-start py-2">
         <Link
           href="/"
-          className="flex items-center justify-center text-gray-900 md:justify-start"
+          className="items-center text-gray-900 sm:justify-start hidden sm:flex sm:visible"
         >
-         <Image src={logo}   alt='logo' width={40} height={30} />
+         <Image src={logo}   alt='logo' width={40} height={40} style={{height:'auto',width:'auto'}}/> 
           <span className="ml-3 text-md">Coder&apos;s Blog</span>
         </Link>
-        <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-          © 2022 Coder&apos;s blog —
+        <p className="text-sm text-gray-500 items-center flex justify-center sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">
+          <span>© 2022 Coder&apos;s blog —</span>
           <a
             href="https://twitter.com/codersgyan"
             className="text-gray-600 ml-1"
             rel="noopener noreferrer"
             target="_blank"
           >
-            @coder&apos;sGyan
+            <span>@coder&apos;sGyan</span>
           </a>
         </p>
-        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <span className="flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
           <a className="text-gray-500">
             <svg
               fill="currentColor"

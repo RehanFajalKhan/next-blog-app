@@ -2,7 +2,6 @@
 import { debounce } from "@/utils";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 interface IPropType {
   categories: ICategory[];
@@ -13,17 +12,17 @@ const Tabs = ({ categories }: IPropType) => {
 
   function handleOnSearch(value: string): void {
     // console.log('requesting...');
-    router.push(`${pathname}?search=${value}`)
+    router.push(`${pathname}?search=${value}`);
   }
 
   const optimzfn = debounce(handleOnSearch, 500);
 
   return (
-    <div className="my-1 flex items-center justify-between border-b-2 border-gray-100">
-      <ul className="flex items-center">
+    <div className="my-1 flex flex-col justify-start content-center sm:flex-row sm:justify-between overflow-hidden">
+      <ul className="flex items-center overflow-auto">
         <li
           className={
-            "mr-6 pb-6 border-b-4 rounded-sm " +
+            "mr-6 pb-0 border-b-4 rounded-sm min-w-fit " +
             `${
               pathname.endsWith("/")
                 ? "border-primary text-primary"
@@ -31,8 +30,9 @@ const Tabs = ({ categories }: IPropType) => {
             }`
           }
         >
-          <Link href="/">Recent</Link>
+          <Link href="/" >Recent</Link>
         </li>
+
         {categories.map((category) => {
           const isActive = pathname.startsWith(
             `/category/${category.attributes.Slug}`
@@ -41,7 +41,7 @@ const Tabs = ({ categories }: IPropType) => {
             <li
               key={category.id}
               className={
-                "mr-6 pb-6 border-b-4 rounded-sm " +
+                "mr-6 pb-0 border-b-4 rounded-sm min-w-fit " +
                 `${
                   isActive
                     ? "border-primary text-primary"
@@ -56,7 +56,7 @@ const Tabs = ({ categories }: IPropType) => {
           );
         })}
       </ul>
-      <div className="flex items-center">
+      <div className="flex items-center justify-start mt-2 sm:mt-0">
         <svg
           className="h-4 fill-gray-500"
           xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ const Tabs = ({ categories }: IPropType) => {
           onChange={(e) => optimzfn(e.target.value)}
           type="text"
           placeholder="Search"
-          className="outline-none px-2 py-1 ml-1"
+          className=" px-2 py-1 ml-1 outline-none"
         />
       </div>
     </div>

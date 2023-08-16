@@ -4,6 +4,7 @@ import Tabs from "@/components/Tabs";
 import {fetchArticles, fetchCategories} from "@/http";
 import qs from 'qs'
 
+
 export default async function Home({
   params,
   searchParams,
@@ -45,22 +46,3 @@ export default async function Home({
   </>
 };
 
-
-
-
-
-//! old way
-// export const getServerSideProps: GetServerSideProps = async () => {
-//   // categories
-//   const {data: categories}: AxiosResponse<ICollectionResponse<ICategory[]>> = await fetchCategories();
-//   console.log("rehan");
-//   console.log('categories',categories);
-  
-//   return {
-//     props: {
-//       categories: {
-//         items: categories.data
-//       }
-//     },
-//   };
-// };
