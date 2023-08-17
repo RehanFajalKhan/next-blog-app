@@ -27,10 +27,9 @@ const Navbar = () => {
                 <Link href="#">Company</Link>
             </li>
         </ul>
-
         <ul className='flex justify-end m-1 py-1'>
             <li className='mr-6 font-medium text-gray-600'>
-                <Link href="login" className='hover:text-gray-400'>Log in</Link>
+                <Link href="login" className='hover:text-gray-400 '>Log in</Link>
             </li>
             <li className='font-medium text-gray-600'>
                 <Link href="signup" className='bg-primary py-1 px-4 rounded-lg text-white hover:bg-primary-dark transition-all'>Sign Up</Link>
